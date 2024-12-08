@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* TODO - Set vars for light mode if needed */
+  }
+}
+
+@layer base {
+  :root {
+    --primary-dark: #01020D;
+    --gray: #BBBDC0;
+    --red: #C60000;
+    --radius: 0.5rem
+  }
+
+  body {
+    @apply bg-primary h-full bg-[url('/pattern.svg')] bg-top lg:bg-right-top bg-cover  bg-no-repeat lg:bg-repeat scroll-smooth text-white;
+  }
+}
