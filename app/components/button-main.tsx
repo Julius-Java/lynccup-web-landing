@@ -10,8 +10,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-red text-white py-[0.488rem] px-[0.97606rem]",
-        outline: "bg-[rgb(198_0_0_/0.1)] text-white border-2 border-red",
+          "bg-primary-red text-white py-[0.488rem] px-[0.97606rem]",
+        outline: "bg-[rgb(198_0_0_/0.1)] text-white border-2 border-primary-red",
       },
       size: {
         sm: "h-8 px-[13px]",

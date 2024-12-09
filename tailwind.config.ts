@@ -13,8 +13,8 @@ export default {
 			primary: {
 				DEFAULT: 'var(--primary-dark)'
 			},
-			gray: 'var(--gray)',
-			red: 'var(--red)',
+			'primary-gray': 'var(--gray)',
+			'primary-red': 'var(--red)',
   			background: 'var(--background)',
   			foreground: 'var(--foreground)'
   		},

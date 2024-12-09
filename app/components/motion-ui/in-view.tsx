@@ -7,6 +7,7 @@ import {
 	Transition,
 	UseInViewOptions,
 } from "motion/react";
+import { cn } from "@/lib/utils";
 
 interface InViewProps {
 	children: ReactNode;
@@ -16,6 +17,7 @@ interface InViewProps {
 	};
 	transition?: Transition;
 	viewOptions?: UseInViewOptions;
+	className?: string
 }
 
 const defaultVariants = {
@@ -28,6 +30,7 @@ export function InView({
 	variants = defaultVariants,
 	transition,
 	viewOptions,
+	className=""
 }: InViewProps) {
 	const ref = useRef(null);
 	const isInView = useInView(ref, viewOptions);
@@ -39,6 +42,7 @@ export function InView({
 			animate={isInView ? "visible" : "hidden"}
 			variants={variants}
 			transition={transition}
+			className={cn(className)}
 		>
 			{children}
 		</motion.div>

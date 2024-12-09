@@ -3,6 +3,7 @@ import { ibm_plex_sans_medium, ibm_plex_sans_bold } from "./components/ui/fonts"
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 export const metadata: Metadata = {
 	title: "Lynccup | Web",
@@ -29,6 +30,7 @@ export default function RootLayout({
 			>
 				<Navbar/>
 				{children}
+				<Footer/>
 			</body>
 		</html>
 	);

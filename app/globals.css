@@ -17,6 +17,6 @@
   }
 
   body {
-    @apply bg-primary h-full bg-[url('/pattern.svg')] bg-top lg:bg-right-top bg-cover  bg-no-repeat lg:bg-repeat scroll-smooth text-white;
+    @apply bg-primary h-full bg-[url('/pattern.svg')] bg-top lg:bg-right-top bg-[length:auto_calc(100vh)] overflow-x-hidden   bg-no-repeat lg:bg-repeat scroll-smooth text-white;
   }
 }
