@@ -1,23 +1,21 @@
 import Image from "next/image";
 import iphone from "@/public/iphone.svg";
 import { TextEffect } from "./components/motion-ui/text-effect";
-import { getRandomColor } from "@/lib/utils";
+// import { getRandomColor } from "@/lib/utils";
 import { InView } from "./components/motion-ui/in-view";
 import { Button } from "./components/button-main";
 import phone from "@/public/phone.svg";
 import LevitateEffect from "./components/motion-ui/levitate-effect";
 import CategoriesMarquee from "./components/categories-marquee";
 import FeatureTabs from "./components/feature-tabs";
-import middleDemo from "@/public/middle-demo.svg";
-import leftDemo from "@/public/left-demo.svg";
-import rightDemo from "@/public/right-demo.svg";
+import AppStoreLink from "./components/app-store-link";
 
 export default function Home() {
 	return (
 		<main className="overflow-x-hidden">
 			<section
 				id="hero"
-				className="min-h-[calc(100vh_-_80px)] lg:min-h-[calc(100vh_-_108px)] px-3 flex flex-col items-center justify-center lg:flex-row lg:justify-normal lg:container lg:mx-auto lg:gap-x-5 "
+				className="min-h-[calc(100vh_-_80px)] lg:min-h-[calc(100vh_-_108px)] px-3 flex flex-col gap-y-12 items-center justify-center lg:flex-row lg:justify-normal lg:container lg:mx-auto lg:gap-x-5 py-14 lg:py-0"
 			>
 				<div className="space-y-7 text-center max-w-xs mx-auto lg:mx-0 lg:text-left lg:max-w-2xl">
 					<TextEffect
@@ -41,7 +39,7 @@ export default function Home() {
 									y: Math.random() * 100 - 50,
 									rotate: Math.random() * 90 - 45,
 									scale: 0.3,
-									color: getRandomColor(),
+									// color: getRandomColor(),
 								},
 								visible: {
 									opacity: 1,
@@ -60,30 +58,14 @@ export default function Home() {
 					>
 						Bringing events and social media together
 					</TextEffect>
-					<InView
-						variants={{
-							hidden: {
-								opacity: 0,
-								scale: 1.5,
-							},
-							visible: {
-								opacity: 1,
-								scale: 1,
-							},
-						}}
-						transition={{ duration: 0.3, ease: "easeInOut" }}
-						viewOptions={{
-							margin: "0px 0px -350px 0px",
-							once: true,
-						}}
-					>
-						<p className="text-lg lg:max-w-xl">
-							Lynccup is a social platform to buy and sell event
-							tickets. It helps everyone interact with eachother,
-							create, manage and book tickets for unforgettable
-							experiences.
-						</p>
-					</InView>
+
+					<TextEffect per="word" className="text-lg lg:max-w-xl">
+						Lynccup is a social platform to buy and sell event
+						tickets. It helps everyone interact with eachother,
+						create, manage and book tickets for unforgettable
+						experiences.
+					</TextEffect>
+
 					<InView
 						variants={{
 							hidden: {
@@ -97,19 +79,21 @@ export default function Home() {
 						}}
 						transition={{ duration: 0.3, ease: "easeInOut" }}
 					>
-						<Button
-							variant={"outline"}
-							size={"md"}
-							className="flex items-center justify-center gap-x-3 mx-auto lg:mx-0"
-						>
-							<Image src={phone} alt="" />
-							<span className="block font-[600]">
-								Get the App
-							</span>
-						</Button>
+						<AppStoreLink>
+							<Button
+								variant={"outline"}
+								size={"md"}
+								className="flex items-center justify-center gap-x-3 mx-auto lg:mx-0"
+							>
+								<Image src={phone} alt="" />
+								<span className="block font-[600]">
+									Get the App
+								</span>
+							</Button>
+						</AppStoreLink>
 					</InView>
 				</div>
-				<div className="relative max-w-max mx-auto hidden lg:block">
+				<div className="relative max-w-max mx-auto block">
 					<InView
 						variants={{
 							hidden: {
@@ -131,12 +115,12 @@ export default function Home() {
 							<Image
 								src={iphone}
 								alt="Lynccup App Screenshot"
-								width={1000}
+								width={600}
 								className="mx-auto z-10 lg:w-full"
 							/>
 						</LevitateEffect>
 					</InView>
-					<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10 rounded-full bg-[rgb(189_76_76_/0.24)]  filter blur-[150px] h-[500px] w-[500px]" />
+					<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10 rounded-full bg-[rgb(189_76_76_/0.24)]  filter blur-[150px] h-[300px] w-[300px] lg:h-[500px] lg:w-[500px]" />
 				</div>
 			</section>
 
@@ -159,84 +143,6 @@ export default function Home() {
 
 			<section className="lg:container lg:mx-auto px-3 py-16 space-y-6">
 				<FeatureTabs />
-			</section>
-
-			<section className="px-3 py-16 space-y-8 md:max-w-2xl md:mx-auto lg:max-w-5xl">
-				<div className="space-y-4 text-center">
-					<h3 className="font-ibm_sans_bold font-[600] text-2xl lg:text-4xl">
-						Ready to make your next event unforgettable?
-					</h3>
-					<p className=""> Join Lynccup and let your events shine!</p>
-				</div>
-				<div className="max-w-max mx-auto">
-					<Button
-						variant={"outline"}
-						size={"lg"}
-						className="flex items-center justify-center gap-x-3  lg:mx-0 px-12"
-					>
-						<Image src={phone} alt="" />
-						<span className="block font-[600]">Get the App</span>
-					</Button>
-				</div>
-				<div className="bg-[#0B0C1C] rounded-xl pt-12 flex items-center justify-center">
-					<InView
-						variants={{
-							hidden: {
-								opacity: 0,
-								x: 150,
-							},
-							visible: {
-								opacity: 1,
-								x: 0,
-							},
-						}}
-						transition={{ duration: 0.3, ease: "easeIn" }}
-						className="lg:self-end hidden lg:block"
-					>
-						<Image
-							src={leftDemo}
-							alt=""
-							className="translate-x-12"
-						/>
-					</InView>
-					<InView
-						variants={{
-							hidden: {
-								opacity: 0,
-								scale: 0,
-							},
-							visible: {
-								opacity: 1,
-								scale: 1,
-								zIndex: 100,
-							},
-						}}
-						transition={{ duration: 0.3, ease: "easeInOut" }}
-					>
-						<Image src={middleDemo} alt="" />
-					</InView>
-
-					<InView
-						variants={{
-							hidden: {
-								opacity: 0,
-								x: -150,
-							},
-							visible: {
-								opacity: 1,
-								x: 0,
-							},
-						}}
-						transition={{ duration: 0.3, ease: "easeIn" }}
-						className="lg:self-end hidden lg:block"
-					>
-						<Image
-							src={rightDemo}
-							alt=""
-							className="-translate-x-12"
-						/>
-					</InView>
-				</div>
 			</section>
 		</main>
 	);
