@@ -37,7 +37,7 @@ export default function Navbar() {
 				className={cn(
 					"flex items-center justify-between lg:container lg:mx-auto transition-all duration-300 ease-in-out",
 					scrolled &&
-						"bg-black/90 backdrop-blur-sm rounded-full py-4 px-6 z-[99999999] lg:max-w-4xl"
+						"bg-black/70 backdrop-blur-sm rounded-full py-4 px-6 z-[99999999] lg:max-w-4xl"
 				)}
 			>
 				<Link href={"/"} className="block">

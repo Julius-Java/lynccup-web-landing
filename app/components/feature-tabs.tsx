@@ -25,52 +25,94 @@ export default function FeatureTabs() {
 	);
 
 	return (
-		<div>
-			{/* Tab Header */}
-			<div className="py-4 border-b border-[#1F1F1F] flex items-center justify-between w-full flex-wrap gap-4">
-				<div className="flex items-center gap-x-3">
-					<Button
-						size={"sm"}
-						className="rounded-full lg:h-12 lg:px-[19px]"
-						onClick={() => setActiveTab("organizers")}
-						variant={
-							activeTab === "organizers" ? "primary" : "outline"
-						}
-					>
-						For event organizers
-					</Button>
-					<Button
-						size={"sm"}
-						className="rounded-full lg:h-12 lg:px-[19px]"
-						variant={
-							activeTab === "attendees" ? "primary" : "outline"
-						}
-						onClick={() => setActiveTab("attendees")}
-					>
-						For attendees
-					</Button>
-				</div>
-				<div>
-					<AppStoreLink>
+		<AnimatePresence>
+			<motion.div key={activeTab}>
+				{/* Tab Header */}
+				<div className="py-4 border-b border-[#1F1F1F] flex items-center justify-between w-full flex-wrap gap-4">
+					<div className="flex items-center gap-x-3">
 						<Button
-							variant={"outline"}
 							size={"sm"}
-							className="flex items-center justify-center gap-x-3 mx-auto lg:mx-0 lg:h-12 lg:px-[19px]"
+							className="rounded-full lg:h-12 lg:px-[19px]"
+							onClick={() => setActiveTab("organizers")}
+							variant={
+								activeTab === "organizers"
+									? "primary"
+									: "outline"
+							}
 						>
-							<Image src={phone} alt="" width={10} />
-							<span className="block font-[600]">Get the App</span>
+							For event organizers
 						</Button>
-					</AppStoreLink>
+						<Button
+							size={"sm"}
+							className="rounded-full lg:h-12 lg:px-[19px]"
+							variant={
+								activeTab === "attendees"
+									? "primary"
+									: "outline"
+							}
+							onClick={() => setActiveTab("attendees")}
+						>
+							For attendees
+						</Button>
+					</div>
+					<div>
+						<AppStoreLink>
+							<Button
+								variant={"outline"}
+								size={"sm"}
+								className="flex items-center justify-center gap-x-3 mx-auto lg:mx-0 lg:h-12 lg:px-[19px]"
+							>
+								<Image src={phone} alt="" width={10} />
+								<span className="block font-[600]">
+									Get the App
+								</span>
+							</Button>
+						</AppStoreLink>
+					</div>
 				</div>
-			</div>
 
-			{/* Tab Content */}
-			<AnimatePresence>
-				<motion.div>
-					{activeTab === "organizers" && <OrganizersTabContent />}
-					{activeTab === "attendees" && <AttendeesTabContent />}
-				</motion.div>
-			</AnimatePresence>
+				{/* Tab Content */}
+				<div>
+					{activeTab === "organizers" && (
+						<motion.div
+							initial={{
+								scale: 0.1,
+							}}
+							animate={{
+								scale: 1,
+							}}
+							exit={{
+								scale: 0.1,
+							}}
+							transition={{
+								duration: 0.5,
+								ease: "easeInOut",
+							}}
+						>
+							<OrganizersTabContent />
+						</motion.div>
+					)}
+					{activeTab === "attendees" && (
+						<motion.div
+							initial={{
+								scale: 0.1,
+							}}
+							animate={{
+								scale: 1,
+							}}
+							exit={{
+								scale: 0.1,
+							}}
+							transition={{
+								duration: 0.5,
+								ease: "easeInOut",
+							}}
+						>
+							<AttendeesTabContent />
+						</motion.div>
+					)}
+				</div>
+			</motion.div>
 
 			<section className="px-3 py-20 space-y-8 md:max-w-2xl md:mx-auto lg:max-w-5xl">
 				<div className="space-y-4 text-center">
@@ -93,7 +135,9 @@ export default function FeatureTabs() {
 							className="flex items-center justify-center gap-x-3  lg:mx-0 px-12"
 						>
 							<Image src={phone} alt="" />
-							<span className="block font-[600]">Get the App</span>
+							<span className="block font-[600]">
+								Get the App
+							</span>
 						</Button>
 					</AppStoreLink>
 				</div>
@@ -157,7 +201,7 @@ export default function FeatureTabs() {
 					</InView>
 				</div>
 			</section>
-		</div>
+		</AnimatePresence>
 	);
 }
 
