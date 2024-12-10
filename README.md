@@ -17,22 +17,22 @@ This is the landing page for the Lynccup web application.
 ## Installation
 
 1. Clone the repository:
-        ```bash
+        ```
         git clone https://github.com/yourusername/lynccup-web-landing.git
         ```
 2. Navigate to the project directory:
-        ```bash
+        ```
         cd lynccup-web-landing
         ```
 3. Install dependencies:
-        ```bash
-        npm install
+        ```
+        pnpm install
         ```
 
 ## Usage
 
 1. Start the development server:
-        ```bash
-        npm start
+        ```
+        pnpm dev
         ```
 2. Open your browser and navigate to `http://localhost:3000`.
