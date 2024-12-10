@@ -1,6 +1,5 @@
 import Image from "next/image";
 import iphone from "@/public/iphone.svg";
-import { TextEffect } from "./components/motion-ui/text-effect";
 // import { getRandomColor } from "@/lib/utils";
 import { InView } from "./components/motion-ui/in-view";
 import { Button } from "./components/button-main";
@@ -18,55 +17,18 @@ export default function Home() {
 				className="min-h-[calc(100vh_-_80px)] lg:min-h-[calc(100vh_-_108px)] px-3 flex flex-col gap-y-12 items-center justify-center lg:flex-row lg:justify-normal lg:container lg:mx-auto lg:gap-x-5 py-14 lg:py-0"
 			>
 				<div className="space-y-7 text-center max-w-xs mx-auto lg:mx-0 lg:text-left lg:max-w-2xl">
-					<TextEffect
-						per="word"
-						as="h1"
-						delay={0.3}
-						className="font-ibm_sans_bold font-[600] text-3xl lg:text-5xl xl:text-6xl"
-						variants={{
-							container: {
-								hidden: { opacity: 0 },
-								visible: {
-									opacity: 1,
-									transition: {
-										staggerChildren: 0.05,
-									},
-								},
-							},
-							item: {
-								hidden: {
-									opacity: 0,
-									y: Math.random() * 100 - 50,
-									rotate: Math.random() * 90 - 45,
-									scale: 0.3,
-									// color: getRandomColor(),
-								},
-								visible: {
-									opacity: 1,
-									y: 0,
-									rotate: 0,
-									scale: 1,
-									color: "#ffffff",
-									transition: {
-										type: "spring",
-										damping: 12,
-										stiffness: 100,
-									},
-								},
-							},
-						}}
-					>
+					<h1 className="font-ibm_sans_bold font-[600] text-3xl lg:text-5xl xl:text-6xl">
 						Bringing events and social media together
-					</TextEffect>
+					</h1>
 
-					<TextEffect per="word" className="text-lg lg:max-w-xl">
+					<p className="text-lg lg:max-w-xl">
 						Lynccup is a social platform to buy and sell event
 						tickets. It helps everyone interact with eachother,
 						create, manage and book tickets for unforgettable
 						experiences.
-					</TextEffect>
+					</p>
 
-					<InView
+					{/* <InView
 						variants={{
 							hidden: {
 								opacity: 0,
@@ -78,20 +40,20 @@ export default function Home() {
 							},
 						}}
 						transition={{ duration: 0.3, ease: "easeInOut" }}
-					>
-						<AppStoreLink>
-							<Button
-								variant={"outline"}
-								size={"md"}
-								className="flex items-center justify-center gap-x-3 mx-auto lg:mx-0"
-							>
-								<Image src={phone} alt="" />
-								<span className="block font-[600]">
-									Get the App
-								</span>
-							</Button>
-						</AppStoreLink>
-					</InView>
+					> */}
+					<AppStoreLink>
+						<Button
+							variant={"outline"}
+							size={"md"}
+							className="flex items-center justify-center gap-x-3 mx-auto lg:mx-0"
+						>
+							<Image src={phone} alt="" />
+							<span className="block font-[600]">
+								Get the App
+							</span>
+						</Button>
+					</AppStoreLink>
+					{/* </InView> */}
 				</div>
 				<div className="relative max-w-max mx-auto block">
 					<InView

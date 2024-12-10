@@ -12,7 +12,7 @@ export default function AppStoreLink({
 			? "https://apps.apple.com/us/app/lynccup/id1581310000"
 			: "https://play.google.com/store/apps/details?id=com.lynccup";
 	return (
-		<a href={link} target="_blank">
+		<a href={link} target="_blank" className="block">
 			{children}
 		</a>
 	);
